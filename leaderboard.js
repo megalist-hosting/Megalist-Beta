@@ -25,7 +25,7 @@ function calcularPontos(rank, percent, minPercent = 0, multiplier = 1) {
 }
 
 async function initLeaderboard() {
-    const listRes = await fetch("data/_list.json");
+    const listRes = await fetch("./data/list.json");
     const levelNames = await listRes.json();
 
     let playersMap = {}; // username -> { user, total, completed: [...] }
@@ -35,7 +35,7 @@ async function initLeaderboard() {
         const rank = i + 1;
 
         try {
-            const res = await fetch(`data/${name}.json`);
+            const res = await fetch(`./data/${name}.json`);
             const data = await res.json();
 
             // se percentToQualify for undefined, considere 0 (nullish)

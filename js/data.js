@@ -8,7 +8,7 @@ async function init() {
 
     try {
 
-        const listResponse = await fetch("data/_list.json");
+        const listResponse = await fetch("./data/list.json");
         if (!listResponse.ok) throw new Error("Erro ao carregar _list.json");
 
         const levelNames = await listResponse.json();

@@ -65,7 +65,7 @@ function getYoutubeID(url) {
 async function init() {
     try {
 
-        const response = await fetch("/data/_list.json");
+        const response = await fetch("./data/list.json");
 
         if (!response.ok) {
             throw new Error("Arquivo _list.json não encontrado");
@@ -76,7 +76,7 @@ async function init() {
         const levels = await Promise.all(
             levelNames.map(async (name, index) => {
 
-                const res = await fetch(`/data/${name}.json`);
+                const res = await fetch(`./data/${name}.json`);
 
                 if (!res.ok) {
                     throw new Error(`Arquivo ${name}.json não encontrado`);
