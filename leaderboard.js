@@ -23,7 +23,7 @@ function calcularPontos(rank, percent, minPercent = 0, multiplier = 1) {
 
     return Math.round(score * 1000) / 1000;
 }
-
+// a
 async function initLeaderboard() {
     const listRes = await fetch("./data/list.json");
     const levelNames = await listRes.json();
