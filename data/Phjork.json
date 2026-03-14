@@ -1,0 +1,20 @@
+{
+    "id": 56587109,
+    "name": "Phjork",
+    "author": "cerufiffy",
+    "creators": ["cerufiffy"],
+    "verifier": "DoggoDEV",
+    "verification": "https://youtu.be/o6vU1Y1eG1I",
+    "percentToQualify": 50,
+    "diffmultiplier": 0.7,
+    "AREDL": "Rated but Not Extreme",
+    "leveldiff": "Easy Demon",
+    "records": [
+        {
+            "user": "Newgdnews",
+            "link": "https://www.youtube.com/watch?v=bcKln3YR4cc",
+            "percent": 100,
+            "hz": 60 
+        }
+    ]
+}

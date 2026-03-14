@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEGA LIST</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div class="logo">MEGA<span> LIST</span></div>
+            
+            <nav>
+                <ul class="nav-links" style="display: flex; align-items: center; list-style: none; gap: 20px;">
+                    <li><a href="https://discord.gg/fBmw5WcwzB" target="_blank" style="text-decoration: none; color: inherit;">Discord</a></li>
+                    <li><a href="leaderboard.html" style="text-decoration: none; color: inherit;">Leaderboard</a></li>
+                     <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfsuGbzE_R1q25oFOInbkasPyO0fy55b7vLUIwLPedE6G8W9w/viewform" target="_blank" style="text-decoration: none; color: inherit;">Send Record</a></li>
+                    <li><button id="theme-btn" class="theme-toggle" style="cursor: pointer; padding: 5px 15px; border-radius: 20px; border: 1px solid #ccc;">🌙 Dark</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+        <section id="demon-list" class="main-list">
+            </section>
+
+        <section class="level-detail-container" id="level-detail-view" style="display: none;">
+            <p style="text-align: center; padding: 20px;">Carregando informações do nível...</p>
+        </section>
+
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>List Editors</h3>
+                <p class="sidebar-desc">Contact any of these people if you have problems with the list.</p>
+                <div id="editors-list" class="staff-list"></div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>List Helpers</h3>
+                <p class="sidebar-desc">Contact these people regarding rejected records.</p>
+                <div id="helpers-list" class="staff-list"></div>
+                <br>
+                  <iframe src="https://discord.com/widget?id=1217254152695189625&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+            </div>
+        </aside>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/level.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-btn');
+        const body = document.body;
+
+        // 1. Carregar preferência salva
+        if (localStorage.getItem('dark-mode') === 'enabled') {
+            body.classList.add('dark-mode');
+            toggleBtn.innerHTML = '<i class="fas fa-sun"></i> Light';
+        }
+
+        // 2. Evento de Clique
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('dark-mode', 'enabled');
+                toggleBtn.innerHTML = '<i class="fas fa-sun"></i> Light';
+            } else {
+                localStorage.setItem('dark-mode', 'disabled');
+                toggleBtn.innerHTML = '<i class="fas fa-moon"></i> Dark';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+    "id": 133804665,
+    "name": "Mega Wave",
+    "author": "AquarGMD",
+    "creators": ["AquarGMD"],
+    "verifier": "AquarGMD",
+    "verification": "https://www.youtube.com/watch?v=uBzLx6c84mo",
+    "percentToQualify": 63,
+    "diffmultiplier": 0.65,
+    "leveldiff": "Easy Demon",
+    "AREDL": "UNRATED",
+    "records": [
+         {
+            "user": "Toast92",
+            "link": "https://www.youtube.com/watch?v=EgHuHkUp780",
+            "percent": 100,
+            "hz": 60
+        },
+        {
+            "user": "Newgdnews",
+            "link": "https://www.youtube.com/watch?v=g1TVQkXCBM0&t=9s",
+            "percent": 100,
+            "hz": 144
+        },
+        {
+            "user": "DoggoDEV",
+            "link": "https://medal.tv/pt/games/geometry-dash/clips/mgVUyxsujj0T1t10i?invite=cr-MSx2VHQsMzM5MjUxNTQy&v=77",
+            "percent": 85,
+            "hz": 60 
+        }
+    ]
+}

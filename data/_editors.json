@@ -1,0 +1,22 @@
+[
+    {
+        "role": "owner",
+        "name": "Mega",
+        "link": "https://www.youtube.com/@Megaxhunter"
+    },
+    {
+        "role": "admin",
+        "name": "Mega",
+        "link": "https://www.youtube.com/@Megaxhunter"
+    },
+    {
+        "role": "helper",
+        "name": "DoggoDEV",
+        "link": "https://www.youtube.com/@TheDoggoDev"
+    },
+    {
+        "role": "dev",
+        "name": "DoggoDEV",
+        "link": "https://www.youtube.com/@TheDoggoDev"
+    }
+]

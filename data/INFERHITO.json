@@ -1,0 +1,26 @@
+{
+    "id": 131048507,
+    "name": "INFERHITO",
+    "author": "trideapthbear",
+    "creators": ["trideapthbear"],
+    "verifier": "AquarGMD",
+    "verification": "https://www.youtube.com/watch?v=BL-HI3Zozlk",
+    "percentToQualify": 60,
+    "diffmultiplier": 0.65,
+    "leveldiff": "Medium Demon",
+    "AREDL": "Rated but Not Extreme",
+    "records": [
+    {
+            "user": "Toast92",
+            "link": "https://www.youtube.com/watch?v=MKHnoAPfc3w",
+            "percent": 100,
+            "hz": 60 
+        },
+        {
+            "user": "Newgdnews",
+            "link": "https://www.youtube.com/watch?v=CK_w6DUTHew",
+            "percent": 100,
+            "hz": 60 
+        }
+    ]
+}

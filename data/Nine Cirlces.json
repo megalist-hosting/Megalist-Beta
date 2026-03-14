@@ -1,0 +1,20 @@
+{
+    "id": 4284013,
+    "name": "Nine Circles",
+    "author": "Zobros",
+    "creators": ["Zobros"],
+    "verifier": "naranciatd6",
+    "verification": "https://youtu.be/07xlQkAdNTo?si=2OXB5273WMkxbL7V",
+    "percentToQualify": 60,
+    "diffmultiplier": 0.65,
+    "leveldiff": "Hard Demon",
+    "AREDL": "Rated but Not Extreme",
+    "records": [
+    {
+            "user": "Megaxhunter",
+            "link": "https://www.youtube.com/shorts/HyqMbtceAIM",
+            "percent": 100,
+            "hz": 60
+        }
+    ]
+}
