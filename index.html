@@ -1,81 +1,79 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEGA LIST</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=1024" />
+        <title>Mega DemonList</title>
 
-    <header class="navbar">
-        <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <div class="logo">MEGA<span> LIST</span></div>
-            
-            <nav>
-                <ul class="nav-links" style="display: flex; align-items: center; list-style: none; gap: 20px;">
-                    <li><a href="https://discord.gg/fBmw5WcwzB" target="_blank" style="text-decoration: none; color: inherit;">Discord</a></li>
-                    <li><a href="leaderboard.html" style="text-decoration: none; color: inherit;">Leaderboard</a></li>
-                     <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfsuGbzE_R1q25oFOInbkasPyO0fy55b7vLUIwLPedE6G8W9w/viewform" target="_blank" style="text-decoration: none; color: inherit;">Send Record</a></li>
-                    <li><button id="theme-btn" class="theme-toggle" style="cursor: pointer; padding: 5px 15px; border-radius: 20px; border: 1px solid #ccc;">🌙 Dark</button></li>
-                </ul>
+        <!-- Replace your server icon by uploading an image file named "list_icon.png"-->
+        <link rel="icon" href="/list_icon.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" type="text/css" href="/css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="/css/typography.css" />
+        <link rel="stylesheet" type="text/css" href="/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/css/pages/list.css" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="/css/pages/leaderboard.css"
+        />
+        <link rel="stylesheet" type="text/css" href="/css/pages/roulette.css" />
+        <link rel="stylesheet" type="text/css" href="/css/components/nav.css" />
+        <link rel="stylesheet" type="text/css" href="/css/components/btn.css" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="/css/components/tabs.css"
+        />
+        <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script>
+        <script src="https://unpkg.com/vue-router@4.0.14/dist/vue-router.global.prod.js"></script>
+        <script type="module" src="/js/main.js"></script>
+    </head>
+    <body id="app">
+        <header :class="{ dark: store.dark }">
+            <div class="logo">
+                <h2>Mega Demonlist</h2>
+                <p>v1.0.0</p>
+            </div>
+            <nav class="nav">
+                <router-link class="nav__tab" to="/">
+                    <span class="type-label-lg">List</span>
+                </router-link>
+                <router-link class="nav__tab" to="/leaderboard">
+                    <span class="type-label-lg">Leaderboard</span>
+                </router-link>
+                <router-link class="nav__tab" to="/roulette">
+                    <span class="type-label-lg">Roulette</span>
+                </router-link>
+                <div class="nav__actions">
+                    <button
+                        class="nav__icon"
+                        @click.prevent="store.toggleDark()"
+                    >
+                        <img
+                            :src="store.dark ? '/assets/light.svg' : '/assets/dark.svg'"
+                            alt=""
+                        />
+                    </button>
+                    <!-- Replace the '#' with your discord server's invite-->
+                    <a class="nav__icon" href="#">
+                        <img src="/assets/discord.svg" alt="Discord Logo" />
+                    </a>
+                    <!-- List record submission form, add a link to replace the '#' when putting a link to your list submission form-->
+                    <a
+                        class="nav__cta type-label-lg"
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSfsuGbzE_R1q25oFOInbkasPyO0fy55b7vLUIwLPedE6G8W9w/viewform?usp=publish-editor"
+                        target="_blank"
+                        >Submit Record</a
+                    >
+                </div>
             </nav>
-        </div>
-    </header>
-
-    <main class="content-wrapper">
-        <section id="demon-list" class="main-list">
-            </section>
-
-        <section class="level-detail-container" id="level-detail-view" style="display: none;">
-            <p style="text-align: center; padding: 20px;">Carregando informações do nível...</p>
-        </section>
-
-        <aside class="sidebar">
-            <div class="sidebar-section">
-                <h3>List Editors</h3>
-                <p class="sidebar-desc">Contact any of these people if you have problems with the list.</p>
-                <div id="editors-list" class="staff-list"></div>
-            </div>
-
-            <div class="sidebar-section">
-                <h3>List Helpers</h3>
-                <p class="sidebar-desc">Contact these people regarding rejected records.</p>
-                <div id="helpers-list" class="staff-list"></div>
-                <br>
-                  <iframe src="https://discord.com/widget?id=1217254152695189625&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-            </div>
-        </aside>
-    </main>
-
-    <script src="js/data.js"></script>
-    <script src="js/level.js"></script>
-    <script src="script.js"></script>
-
-    <script>
-        const toggleBtn = document.getElementById('theme-btn');
-        const body = document.body;
-
-        // 1. Carregar preferência salva
-        if (localStorage.getItem('dark-mode') === 'enabled') {
-            body.classList.add('dark-mode');
-            toggleBtn.innerHTML = '<i class="fas fa-sun"></i> Light';
-        }
-
-        // 2. Evento de Clique
-        toggleBtn.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            
-            if (body.classList.contains('dark-mode')) {
-                localStorage.setItem('dark-mode', 'enabled');
-                toggleBtn.innerHTML = '<i class="fas fa-sun"></i> Light';
-            } else {
-                localStorage.setItem('dark-mode', 'disabled');
-                toggleBtn.innerHTML = '<i class="fas fa-moon"></i> Dark';
-            }
-        });
-    </script>
-</body>
+        </header>
+        <router-view :class="{ dark: store.dark }"></router-view>
+    </body>
 </html>
